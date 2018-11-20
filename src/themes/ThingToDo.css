@@ -1,0 +1,28 @@
+.ThingToDo{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+.ThingToDo label {
+    display: inline-block;
+    cursor: pointer;
+    width:100%;
+    text-align: left;
+    text-indent: 10px;
+    font-weight: 500;
+    font-size:18px;
+
+}
+
+.ThingToDo label::after{
+    content:"";
+    border: 1px solid #c2c2a3;
+    display: block;
+
+}

@@ -1,0 +1,28 @@
+.Form{
+    margin-top:30px;
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:  center;
+}
+
+.Form label{
+    color:#b8b894;
+    font-weight: bold;
+    font-size:20px;
+    margin-right:15px;
+}
+.Form input[type=text]{
+    font-weight: 500;
+    font-size:18px;
+    border:none;
+    border-bottom: #c2c2a3 1.5px solid ;
+    background: inherit;
+    cursor:pointer;
+    width:auto;
+    color:#b8b894;
+}
+.Form input[type=text]:focus{
+    cursor: auto;
+}

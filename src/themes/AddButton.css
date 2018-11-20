@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Indie Flower";
+    src: url("../fonts/IndieFlower.ttf");
+}
+
+.AddButton {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+    color: white;
+    background: #ffb3b3;
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+
+.AddButton:hover{
+    background: #ff8080;
+    cursor: pointer;
+}
+
+.AddButton:active{
+    background: #ff4d4d;
+}
