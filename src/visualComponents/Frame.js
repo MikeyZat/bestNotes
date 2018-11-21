@@ -6,20 +6,27 @@ import Form from "../visualComponents/Form";
 import ThingToDoContainer from "../logicalComponents/ThingToDoContainer";
 
 const Frame = (props) =>{
-
-    let notes = props.notes.map((note,index) =>
-        <ThingToDoContainer
-            key={index.toString()}
-            index={index}
-            done={note.done}
-            task={note.task}
-            handleChange={props.handleCheckboxChange}
-            deleteNote={props.deleteNote}/>
-    );
+    let rateOfDone=0;
+    let notes = props.notes.map((note,index) => {
+        if (note.done)
+            rateOfDone++;
+        return (
+            <ThingToDoContainer
+                key={index.toString()}
+                index={index}
+                done={note.done}
+                task={note.task}
+                handleChange={props.handleCheckboxChange}
+                deleteNote={props.deleteNote}/>);
+    });
+    if(props.notes.length>0)
+        rateOfDone/=props.notes.length;
+    else
+        rateOfDone=-1;
 
     return (
         <section className="Frame">
-            <FrameTitleContainer/>
+            <FrameTitleContainer rateOfDone={rateOfDone}/>
             <ul className="tasksList">
                 {notes}
                 <Form/>

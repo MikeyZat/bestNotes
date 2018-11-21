@@ -43,6 +43,7 @@ input[type=checkbox] {
     transition-timing-function: ease-out;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+    overflow-wrap: break-word;
 }
 
 .ThingToDo label::after{
@@ -54,8 +55,9 @@ input[type=checkbox] {
 }
 
 .ThingToDo .customCheck{
-    width:20px;
+    min-width: 18px;
     height:18px;
+    padding-bottom: 5px;
     background:white;
     border:0.5px #c2c2a3 solid;
     cursor:pointer;
