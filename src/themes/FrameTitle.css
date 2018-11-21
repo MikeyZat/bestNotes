@@ -27,7 +27,7 @@
 
 }
 
-@media (min-width: 560px) {
+@media (min-width: 640px) {
     .FrameTitle h3{
         margin:5px;
         font-size:20px;
