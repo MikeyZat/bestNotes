@@ -3,7 +3,7 @@ import DeleteButton from '../visualComponents/DeleteButton'
 class DeleteButtonContainer extends Component {
     render() {
         return (
-            <DeleteButton/>
+            <DeleteButton onClick={this.props.onClick} index={this.props.index}/>
         );
     }
 }

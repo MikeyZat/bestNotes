@@ -3,8 +3,12 @@ import '../themes/DeleteButton.css';
 
 const DeleteButton = (props) =>{
 
+    let handleClick=()=>{
+        props.onClick(props.index);
+    };
+
     return (
-        <button className="DeleteButton">X</button>
+        <button onClick={handleClick} className="DeleteButton">X</button>
     );
 
 };

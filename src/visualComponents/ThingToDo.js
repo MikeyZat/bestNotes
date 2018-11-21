@@ -3,18 +3,32 @@ import '../themes/ThingToDo.css';
 import DeleteButtonContainer from '../logicalComponents/DeleteButtonContainer'
 const ThingToDo = (props) =>{
 
-    let style={};
+    let labelStyle={};
+    let spanStyle={};
     if(props.done){
-        style={
+        labelStyle={
             textDecoration: "line-through",
             color:"#c2c2a3"
         };
+        spanStyle={
+            background:"#f5f5f0",
+            color:"#33cc33",
+            fontWeight:"bold"
+        };
+        return (
+            <li className="ThingToDo">
+                <span style={spanStyle} className="customCheck" >&#x2713;</span>
+                <label style={labelStyle} htmlFor={props.index}>{props.task}</label>
+                <input type="checkbox" id={props.index} name={props.index} onChange={props.handleChange}/>
+                <DeleteButtonContainer onClick={props.deleteNote} index={props.index}/>
+            </li>
+        );
     }
     return (
         <li className="ThingToDo">
-            <label style={style} htmlFor="thing1">The setting Siema nara Siema nara Siema nara Siema nara Siema nara Siema nara Siema nara Siema nara Siema nara </label>
-            <input type="checkbox" id="thing1" name="thing1"/>
-            <DeleteButtonContainer/>
+            <span style={spanStyle} className="customCheck"> </span>
+            <label style={labelStyle} htmlFor={props.index}>{props.task}</label>
+            <input type="checkbox" id={props.index} name={props.index} onChange={props.handleChange}/>
         </li>
             );
 

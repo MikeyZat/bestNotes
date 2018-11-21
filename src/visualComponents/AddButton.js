@@ -4,7 +4,7 @@ import '../themes/AddButton.css';
 const AddButton = (props) =>{
 
     return (
-        <button className="AddButton">Add</button>
+        <button onClick={props.onClick} className="AddButton">Add</button>
     );
 
 };

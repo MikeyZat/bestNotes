@@ -10,25 +10,47 @@
     margin:10px;
 }
 
+
 .FrameTitle h3{
     margin:5px;
     font-size:20px;
 }
 
-.FrameTitle h3::after, .FrameTitle h3::before{
-    display: inline-block;
-    letter-spacing: -5px;
+.FrameTitle h3::before{
+    content:"<<<<<<<\00b7\00b7\00b7\00b7\00b7\00b7>>>>>>>";
+    display: block;
     font-size:25px;
     -webkit-transform: scaleX(0.5) scaleY(1.5);
     transform: scaleX(0.5) scaleY(1.5);
     margin-bottom:15px;
     font-weight: normal;
+
 }
 
-.FrameTitle h3::after{
-    content:">>>>>>>>>>";
+@media (min-width: 560px) {
+    .FrameTitle h3{
+        margin:5px;
+        font-size:20px;
+    }
+
+    .FrameTitle h3::after, .FrameTitle h3::before{
+        display: inline-block;
+        letter-spacing: -5px;
+        font-size:25px;
+        -webkit-transform: scaleX(0.5) scaleY(1.5);
+        transform: scaleX(0.5) scaleY(1.5);
+        margin-bottom:15px;
+        font-weight: normal;
+
+    }
+
+    .FrameTitle h3::after{
+        content:">>>>>>>>>>";
+    }
+
+    .FrameTitle h3::before{
+        content:"<<<<<<<<<<";
+    }
 }
 
-.FrameTitle h3::before{
-    content:"<<<<<<<<<<";
-}
+

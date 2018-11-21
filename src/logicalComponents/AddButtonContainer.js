@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import AddButton from '../visualComponents/AddButton'
 class AddButtonContainer extends Component {
+
     render() {
         return (
-            <AddButton/>
+            <AddButton onClick={this.props.onClick}/>
         );
     }
 }

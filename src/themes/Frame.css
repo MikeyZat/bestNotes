@@ -8,8 +8,16 @@
     border-radius: 5%;
     position:relative;
     max-width:800px;
+    width:80%;
 }
 
 .tasksList{
 padding:0;
+}
+
+
+@media (min-width: 560px) {
+    .Frame{
+        width:auto;
+    }
 }
