@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Indie Flower";
+    src: url("../fonts/IndieFlower.ttf");
+}
+
+.LoginForm{
+    margin-left:10px;
+    margin-right:10px;
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm label{
+
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.LoginForm input[type="text"]{
+    width:250px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.LoginForm input[type="submit"]{
+    padding: 15px;
+    color: white;
+    background: #ffb3b3;
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.LoginForm input[type="submit"]:hover{
+    background: #ff8080;
+    cursor: pointer;
+}
+
+.LoginForm input[type="submit"]:active{
+    background: #ff4d4d;
+}
