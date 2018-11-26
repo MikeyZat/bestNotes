@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import ThingToDo from '../visualComponents/ThingToDo'
+import deleteTask from "../restModules/DeletingData";
+import updateTask from "../restModules/UpdatingData";
 class ThingToDoContainer extends Component {
 
-    // constructor(props){
-    //     super(props);
-    //
-    //     let newName = "task "+props.nr;
-    //     this.state={
-    //         name:newName
-    //     };
-    // }
-
+    componentDidUpdate(prevProps){
+        if(prevProps.done!==this.props.done&&prevProps.task===this.props.task)
+            updateTask(this.props.userName,this.props.task,this.props.done)
+    }
+    componentWillUnmount(){
+        deleteTask(this.props.userName,this.props.task);
+    }
     render() {
         return (
             <ThingToDo

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import App from '../visualComponents/App';
 import LoginPage from '../visualComponents/LoginPage';
+import checkUser from "../restModules/CheckingUser";
 class AppContainer extends Component {
 
     constructor(props){
@@ -15,7 +16,7 @@ class AppContainer extends Component {
     }
 
     logIn(name){
-        if(name){
+        if(name && checkUser(name)){
             this.setState({
                 logged:true,
                 user:name,
@@ -30,19 +31,12 @@ class AppContainer extends Component {
         }
     }
 
-    componentDidMount(){
-        document.addEventListener("keyup",
-            function(event){
-                if(event.key.toLowerCase()==="enter")
-                    document.getElementsByClassName("AddButton")[0].click();
-            },
-            false);
-    }
+
     render() {
 
         if (this.state.logged) {
             return (
-                <App name={this.state.user}/>
+                <App userName={this.state.user}/>
             );
         }else{
             return(

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Frame from '../visualComponents/Frame'
+import createTask from "../restModules/CreatingData";
+import getTasks from "../restModules/GettingData";
 class FrameContainer extends Component {
 
     constructor(props) {
@@ -18,6 +20,27 @@ class FrameContainer extends Component {
         this.checkSound = new Audio('../checkSound.mp3');
         this.checkSound.volume=0.5;
     }
+    componentDidMount(){
+
+        document.addEventListener("keyup",
+            function(event){
+                if(!(typeof event.key ==="undefined"))
+                    if(event.key.toLowerCase()==="enter")
+                        document.getElementsByClassName("AddButton")[0].click();
+            },
+            false);
+    }
+
+    componentWillMount(){
+        getTasks(this.props.userName);
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevState.notes.length < this.state.notes.length)
+            createTask(this.props.userName,this.state.notes[this.state.notes.length-1].task);
+
+    }
+
 
     handleCheckboxChange(event){
         let newNotes = this.state.notes.slice(0);
@@ -62,6 +85,7 @@ class FrameContainer extends Component {
     render() {
         return (
             <Frame
+                userName={this.props.userName}
                 addNote={this.addNote}
                 notes={this.state.notes}
                 handleCheckboxChange={this.handleCheckboxChange}

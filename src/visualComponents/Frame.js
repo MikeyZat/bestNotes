@@ -12,6 +12,7 @@ const Frame = (props) =>{
             rateOfDone++;
         return (
             <ThingToDoContainer
+                userName={props.userName}
                 key={index.toString()}
                 index={index}
                 done={note.done}
