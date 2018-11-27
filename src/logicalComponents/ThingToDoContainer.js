@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ThingToDo from '../visualComponents/ThingToDo'
-import deleteTask from "../restModules/DeletingData";
+import ThingToDo from '../visualComponents/ThingToDo';
 import updateTask from "../restModules/UpdatingData";
 class ThingToDoContainer extends Component {
 
@@ -9,7 +8,18 @@ class ThingToDoContainer extends Component {
             updateTask(this.props.userName,this.props.task,this.props.done)
     }
     componentWillUnmount(){
-        deleteTask(this.props.userName,this.props.task);
+        const URL = "http://localhost:8080/deleteTask?";
+        const nameParam = "name=";
+        const taskParam = "text=";
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () =>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                console.log(xhr.response);
+            }
+        };
+        xhr.open('DELETE',`${URL}${nameParam}${this.props.userName}&${taskParam}${this.props.task}`,true);
+        xhr.send();
     }
     render() {
         return (

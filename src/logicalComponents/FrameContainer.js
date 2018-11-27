@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Frame from '../visualComponents/Frame'
 import createTask from "../restModules/CreatingData";
-import getTasks from "../restModules/GettingData";
 class FrameContainer extends Component {
 
     constructor(props) {
@@ -32,15 +31,30 @@ class FrameContainer extends Component {
     }
 
     componentWillMount(){
-        getTasks(this.props.userName);
+        //getTasks(this.props.userName);
+        const URL = "http://localhost:8080/getTasks?";
+        const nameParam = "name=";
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () =>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                let newNotes=[];
+                for (let i =0; i<xhr.response.length; i++){
+                    let newNote = {
+                        done:xhr.response[i].done,
+                        task:xhr.response[i].text
+                    };
+                    newNotes.push(newNote);
+
+                }
+                this.setState({
+                    notes: newNotes
+                });
+            }
+        };
+        xhr.open('GET',`${URL}${nameParam}${this.props.userName}`,true);
+        xhr.send();
     }
-
-    componentDidUpdate(prevProps, prevState){
-        if(prevState.notes.length < this.state.notes.length)
-            createTask(this.props.userName,this.state.notes[this.state.notes.length-1].task);
-
-    }
-
 
     handleCheckboxChange(event){
         let newNotes = this.state.notes.slice(0);
@@ -52,13 +66,12 @@ class FrameContainer extends Component {
         this.setState({
             notes:newNotes
         });
-
-
     }
 
     addNote(){
         let input = document.getElementById("task");
         if(input.value) {
+            createTask(this.props.userName,input.value);
             this.createSound.play();
             let newNote = {
                 done:false,
