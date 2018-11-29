@@ -1,9 +1,9 @@
 import React from 'react';
 import '../themes/DeleteButton.css';
 
-const DeleteButton = (props) =>{
+const DeleteButton = (props) => {
 
-    let handleClick=()=>{
+    let handleClick = () => {
         props.onClick(props.index);
     };
 

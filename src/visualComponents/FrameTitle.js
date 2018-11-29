@@ -1,7 +1,7 @@
 import React from 'react';
 import '../themes/FrameTitle.css';
 
-const FrameTitle = (props) =>{
+const FrameTitle = (props) => {
 
 
     return (
@@ -9,7 +9,7 @@ const FrameTitle = (props) =>{
             <h1>things to do:</h1>
             <h3>{props.message}</h3>
         </header>
-            );
+    );
 
 };
 

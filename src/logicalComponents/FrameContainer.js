@@ -1,48 +1,48 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Frame from '../visualComponents/Frame'
-import createTask from "../restModules/CreatingData";
+
 class FrameContainer extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state={
-            notes:[]
+        this.state = {
+            notes: []
         };
 
-        this.handleCheckboxChange=this.handleCheckboxChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.addNote = this.addNote.bind(this);
         this.deleteNote = this.deleteNote.bind(this);
         this.createSound = new Audio('../soundOfPaper.mp3');
         this.deleteSound = new Audio('../paperTear.mp3');
-        this.deleteSound.volume=0.3;
+        this.deleteSound.volume = 0.3;
         this.checkSound = new Audio('../checkSound.mp3');
-        this.checkSound.volume=0.5;
+        this.checkSound.volume = 0.5;
     }
-    componentDidMount(){
+
+    componentDidMount() {
 
         document.addEventListener("keyup",
-            function(event){
-                if(!(typeof event.key ==="undefined"))
-                    if(event.key.toLowerCase()==="enter")
+            function (event) {
+                if (!(typeof event.key === "undefined"))
+                    if (event.key.toLowerCase() === "enter")
                         document.getElementsByClassName("AddButton")[0].click();
             },
             false);
     }
 
-    componentWillMount(){
-        //getTasks(this.props.userName);
+    componentWillMount() {
         const URL = "http://localhost:8080/getTasks?";
         const nameParam = "name=";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.onreadystatechange = () =>{
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                let newNotes=[];
-                for (let i =0; i<xhr.response.length; i++){
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                let newNotes = [];
+                for (let i = 0; i < xhr.response.length; i++) {
                     let newNote = {
-                        done:xhr.response[i].done,
-                        task:xhr.response[i].text
+                        done: xhr.response[i].done,
+                        task: xhr.response[i].text
                     };
                     newNotes.push(newNote);
 
@@ -52,33 +52,50 @@ class FrameContainer extends Component {
                 });
             }
         };
-        xhr.open('GET',`${URL}${nameParam}${this.props.userName}`,true);
+        xhr.open('GET', `${URL}${nameParam}${this.props.userName}`, true);
         xhr.send();
     }
 
-    handleCheckboxChange(event){
+    handleCheckboxChange(event) {
         let newNotes = this.state.notes.slice(0);
-        let input =  event.target;
+        let input = event.target;
         let index = input.id;
-        newNotes[index].done=!newNotes[index].done;
-        if(newNotes[index].done)
+        newNotes[index].done = !newNotes[index].done;
+        if (newNotes[index].done)
             this.checkSound.play();
         this.setState({
-            notes:newNotes
+            notes: newNotes
         });
     }
 
-    addNote(){
+    addNote() {
         let input = document.getElementById("task");
-        if(input.value) {
-            createTask(this.props.userName,input.value);
+        if (input.value) {
+            const xhr = new XMLHttpRequest();
+            const URL = 'http://localhost:8080/addTask';
+            const data = JSON.stringify({
+                userName: this.props.userName,
+                text: input.value
+            });
+            xhr.responseType = 'json';
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.response.ok)
+                        console.log("dodano pomyślnie");
+                }
+            };
+            xhr.open('POST', URL);
+            xhr.setRequestHeader('Content-type',
+                'application/json');
+            xhr.send(data);
+
             this.createSound.play();
             let newNote = {
-                done:false,
-                task:input.value
+                done: false,
+                task: input.value
             };
-            input.value="";
-            let newNotes=this.state.notes.slice(0);
+            input.value = "";
+            let newNotes = this.state.notes.slice(0);
             newNotes.push(newNote);
             this.setState({
                 notes: newNotes
@@ -86,12 +103,25 @@ class FrameContainer extends Component {
         }
     }
 
-    deleteNote(index){
+    deleteNote(index) {
         this.deleteSound.play();
         let newNotes = this.state.notes.slice(0);
-        newNotes.splice(index,1);
+        let deletedNote = newNotes.splice(index, 1);
+
+        const URL = "http://localhost:8080/deleteTask?";
+        const nameParam = "name=";
+        const taskParam = "text=";
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                console.log(xhr.response);
+            }
+        };
+        xhr.open('DELETE', `${URL}${nameParam}${this.props.userName}&${taskParam}${deletedNote[0].task}`, true);
+        xhr.send();
         this.setState({
-            notes:newNotes
+            notes: newNotes
         });
     }
 

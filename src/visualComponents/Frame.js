@@ -5,9 +5,9 @@ import AddButtonContainer from "../logicalComponents/AddButtonContainer";
 import Form from "../visualComponents/Form";
 import ThingToDoContainer from "../logicalComponents/ThingToDoContainer";
 
-const Frame = (props) =>{
-    let rateOfDone=0;
-    let notes = props.notes.map((note,index) => {
+const Frame = (props) => {
+    let rateOfDone = 0;
+    let notes = props.notes.map((note, index) => {
         if (note.done)
             rateOfDone++;
         return (
@@ -20,10 +20,10 @@ const Frame = (props) =>{
                 handleChange={props.handleCheckboxChange}
                 deleteNote={props.deleteNote}/>);
     });
-    if(props.notes.length>0)
-        rateOfDone/=props.notes.length;
+    if (props.notes.length > 0)
+        rateOfDone /= props.notes.length;
     else
-        rateOfDone=-1;
+        rateOfDone = -1;
 
     return (
         <section className="Frame">
