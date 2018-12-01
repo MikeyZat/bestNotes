@@ -44,8 +44,6 @@ class AppContainer extends Component {
             }
         };
         xhr.open('GET', `${URL}${param}${name}`, true);
-        xhr.setRequestHeader('Access-Control-Allow-Origin',
-            '*');
         xhr.send();
 
     }
