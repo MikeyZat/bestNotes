@@ -32,7 +32,7 @@ class FrameContainer extends Component {
     }
 
     componentWillMount() {
-        const URL = "http://localhost:8080/getTasks?";
+        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/getTasks?";
         const nameParam = "name=";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
@@ -72,7 +72,7 @@ class FrameContainer extends Component {
         let input = document.getElementById("task");
         if (input.value) {
             const xhr = new XMLHttpRequest();
-            const URL = 'http://localhost:8080/addTask';
+            const URL = 'http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/addTask';
             const data = JSON.stringify({
                 userName: this.props.userName,
                 text: input.value
@@ -108,7 +108,7 @@ class FrameContainer extends Component {
         let newNotes = this.state.notes.slice(0);
         let deletedNote = newNotes.splice(index, 1);
 
-        const URL = "http://localhost:8080/deleteTask?";
+        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/deleteTask?";
         const nameParam = "name=";
         const taskParam = "text=";
         const xhr = new XMLHttpRequest();

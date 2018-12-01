@@ -22,7 +22,7 @@ class AppContainer extends Component {
                 error: true
             });
         }
-        const URL = "http://localhost:8080/isName";
+        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/isName";
         const param = "?name=";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
