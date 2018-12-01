@@ -2,7 +2,7 @@
   "name": "best_notes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikeyzat.github.io/bestNotes",
+  "homepage": "https://mikeyzat.github.io/bestNotes/",
   "engines": {
     "npm": "6.4.1",
     "node": "11.1.0"
