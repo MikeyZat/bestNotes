@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d06077c87e8573e1cb74",
+    "revision": "53bb41010fbcd22e7465",
     "url": "/bestNotes/static/css/main.adefddba.chunk.css"
   },
   {
-    "revision": "d06077c87e8573e1cb74",
-    "url": "/bestNotes/static/js/main.d06077c8.chunk.js"
+    "revision": "53bb41010fbcd22e7465",
+    "url": "/bestNotes/static/js/main.53bb4101.chunk.js"
   },
   {
     "revision": "c40ebc2deb63521971cc",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/bestNotes/static/media/IndieFlower.cbd50882.ttf"
   },
   {
-    "revision": "1f4014ae83a79899b9829781ee43dbac",
+    "revision": "00504dce372123a686452b94dc21e4e3",
     "url": "/bestNotes/index.html"
   }
 ];
