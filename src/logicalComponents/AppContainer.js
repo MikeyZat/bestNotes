@@ -22,29 +22,15 @@ class AppContainer extends Component {
                 error: true
             });
         }
-        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/isName";
-        const param = "?name=";
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.response) {
-                    this.setState({
-                        logged: true,
-                        user: name.toLowerCase(),
-                        error: false,
-                        loginMessage: "Who's there? Insert your name:"
-                    });
-                } else {
-                    this.setState({
-                        loginMessage: "I haven't found that account! Try again: ",
-                        error: true
-                    });
-                }
-            }
-        };
-        xhr.open('GET', `${URL}${param}${name}`, true);
-        xhr.send();
+
+        this.setState({
+            logged: true,
+            user: name.toLowerCase(),
+            error: false,
+            loginMessage: "Who's there? Insert your name:"
+        });
+
+
 
     }
 
