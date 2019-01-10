@@ -20,3 +20,7 @@ Back-end stands on AWS
 
 I am aware of my code being not of the best quality, but I was short of time due to much work at the University.
 I just wanted to have it done and let it be useful for someone. I will pay more attention to the code quality in the future.
+
+Live (although backend is not live :/ ) :
+
+https://mikeyzat.github.io/bestNotes
