@@ -1,4 +1,4 @@
-###FINISHED###
+###FINISHED###  EDIT:  BACKEND IS DOWN :(
 
 Someone inspired me to create 'To-do-List' available online, with great compatibility with both PC and mobile devices.
 Technology stack:
