@@ -13,10 +13,10 @@ class FrameContainer extends Component {
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.addNote = this.addNote.bind(this);
         this.deleteNote = this.deleteNote.bind(this);
-        this.createSound = new Audio('../soundOfPaper.mp3');
-        this.deleteSound = new Audio('../paperTear.mp3');
+        this.createSound = new Audio('soundOfPaper.mp3');
+        this.deleteSound = new Audio('paperTear.mp3');
         this.deleteSound.volume = 0.3;
-        this.checkSound = new Audio('../checkSound.mp3');
+        this.checkSound = new Audio('checkSound.mp3');
         this.checkSound.volume = 0.5;
     }
 
