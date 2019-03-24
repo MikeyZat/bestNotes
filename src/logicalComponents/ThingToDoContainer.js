@@ -7,29 +7,26 @@ class ThingToDoContainer extends Component {
         if (prevProps.done !== this.props.done && prevProps.task === this.props.task) {
             //updateTask(this.props.userName, this.props.task, this.props.done)
             const xhr = new XMLHttpRequest();
-            const URL = 'http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/updateTask';
+            const URL = 'http://flaneczki.pl:8888/updateTask';
             const data = JSON.stringify({
-                userName: this.props.userName,
+                username: this.props.userName,
                 text: this.props.task,
                 done: this.props.done
             });
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response) {
                     if (xhr.response.ok)
                         console.log("zmieniono pomyślnie");
                 }
             };
-            xhr.open('PATCH', URL);
+            xhr.open('PUT', URL);
             xhr.setRequestHeader('Content-type',
                 'application/json');
             xhr.send(data);
         }
     }
 
-    componentWillUnmount() {
-
-    }
 
     render() {
         return (

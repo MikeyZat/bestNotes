@@ -12,6 +12,7 @@
     font-weight: bold;
     margin-left:10px;
     height:19px;
+    outline:none;
 }
 
 .DeleteButton:hover{

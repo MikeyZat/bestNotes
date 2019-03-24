@@ -6,7 +6,7 @@ const App = (props) => {
 
     return (
         <div className="App">
-            <FrameContainer userName={props.userName}/>
+            <FrameContainer userName={props.userName} logOut={props.logOut}/>
         </div>
     );
 

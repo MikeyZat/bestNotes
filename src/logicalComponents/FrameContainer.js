@@ -10,9 +10,6 @@ class FrameContainer extends Component {
             notes: []
         };
 
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-        this.addNote = this.addNote.bind(this);
-        this.deleteNote = this.deleteNote.bind(this);
         this.createSound = new Audio('soundOfPaper.mp3');
         this.deleteSound = new Audio('paperTear.mp3');
         this.deleteSound.volume = 0.3;
@@ -32,30 +29,33 @@ class FrameContainer extends Component {
     }
 
     componentWillMount() {
-        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/getTasks/";
+        const URL = "http://flaneczki.pl:8888/getTasks/";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok ) {
-                let newNotes = [];
-                for (let i = 0; i < xhr.response.length; i++) {
-                    let newNote = {
-                        done: xhr.response[i].done,
-                        task: xhr.response[i].text
-                    };
-                    newNotes.push(newNote);
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.response) {
+                    let newNotes = [];
+                    for (let i = 0; i < xhr.response.length; i++) {
+                        console.log(xhr.response[i]);
+                        let newNote = {
+                            done: xhr.response[i].done,
+                            task: xhr.response[i].text
+                        };
+                        newNotes.push(newNote);
 
+                    }
+                    this.setState({
+                        notes: newNotes
+                    });
                 }
-                this.setState({
-                    notes: newNotes
-                });
             }
         };
         xhr.open('GET', `${URL}${this.props.userName}`, true);
         xhr.send();
     }
 
-    handleCheckboxChange(event) {
+    handleCheckboxChange = (event) => {
         let newNotes = this.state.notes.slice(0);
         let input = event.target;
         let index = input.id;
@@ -65,21 +65,21 @@ class FrameContainer extends Component {
         this.setState({
             notes: newNotes
         });
-    }
+    };
 
-    addNote() {
+    addNote = () => {
         let input = document.getElementById("task");
         if (input.value) {
             const xhr = new XMLHttpRequest();
-            const URL = 'http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/addTask';
+            const URL = 'http://flaneczki.pl:8888/newTask';
             const data = JSON.stringify({
                 userName: this.props.userName,
                 text: input.value
             });
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
-                        console.log("dodano pomyślnie");
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response) {
+                    console.log("dodano pomyślnie");
                 }
             };
             xhr.open('POST', URL);
@@ -99,22 +99,22 @@ class FrameContainer extends Component {
                 notes: newNotes
             });
         }
-    }
+    };
 
-    deleteNote(index) {
+    deleteNote = (index) => {
         this.deleteSound.play();
         let newNotes = this.state.notes.slice(0);
         let deletedNote = newNotes.splice(index, 1);
 
-        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/deleteTask?";
+        const URL = "http://flaneczki.pl:8888/deleteTask";
         const data = JSON.stringify({
             userName: this.props.userName,
-            task: deletedNote[0].task
+            text: deletedNote[0].task
         });
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.response) {
                 console.log(xhr.response);
             }
         };
@@ -123,7 +123,7 @@ class FrameContainer extends Component {
         this.setState({
             notes: newNotes
         });
-    }
+    };
 
     render() {
         return (
@@ -132,7 +132,8 @@ class FrameContainer extends Component {
                 addNote={this.addNote}
                 notes={this.state.notes}
                 handleCheckboxChange={this.handleCheckboxChange}
-                deleteNote={this.deleteNote}/>
+                deleteNote={this.deleteNote}
+                logOut={this.props.logOut}/>
         );
     }
 }

@@ -15,6 +15,30 @@
 padding:0;
 }
 
+.log-out{
+    position: absolute;
+    right:5px;
+    top:5px;
+    padding: 5px;
+    color: white;
+    background: #ff4d4d;
+    border-radius: 50%;
+    border: 1px #ffffff solid;
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    outline: none;
+}
+
+.log-out:hover{
+    cursor: pointer;
+    background: #ff332c;
+}
+
+.log-out:active{
+    background: #ff151a;
+}
 
 @media (min-width: 560px) {
     .Frame{

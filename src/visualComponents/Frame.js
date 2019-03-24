@@ -27,6 +27,7 @@ const Frame = (props) => {
 
     return (
         <section className="Frame">
+            <button onClick={props.logOut} className={"log-out"}>Log Out</button>
             <FrameTitleContainer rateOfDone={rateOfDone}/>
             <ul className="tasksList">
                 {notes}
