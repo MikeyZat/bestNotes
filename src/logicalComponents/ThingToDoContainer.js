@@ -15,12 +15,12 @@ class ThingToDoContainer extends Component {
             });
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
                     if (xhr.response.ok)
                         console.log("zmieniono pomyślnie");
                 }
             };
-            xhr.open('POST', URL);
+            xhr.open('PATCH', URL);
             xhr.setRequestHeader('Content-type',
                 'application/json');
             xhr.send(data);

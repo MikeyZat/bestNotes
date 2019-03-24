@@ -32,12 +32,11 @@ class FrameContainer extends Component {
     }
 
     componentWillMount() {
-        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/getTasks?";
-        const nameParam = "name=";
+        const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/getTasks/";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok ) {
                 let newNotes = [];
                 for (let i = 0; i < xhr.response.length; i++) {
                     let newNote = {
@@ -52,7 +51,7 @@ class FrameContainer extends Component {
                 });
             }
         };
-        xhr.open('GET', `${URL}${nameParam}${this.props.userName}`, true);
+        xhr.open('GET', `${URL}${this.props.userName}`, true);
         xhr.send();
     }
 
@@ -79,8 +78,7 @@ class FrameContainer extends Component {
             });
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.response.ok)
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
                         console.log("dodano pomyślnie");
                 }
             };
@@ -109,17 +107,19 @@ class FrameContainer extends Component {
         let deletedNote = newNotes.splice(index, 1);
 
         const URL = "http://bestnotesapi-env.qbmgq6ev8j.eu-west-1.elasticbeanstalk.com/deleteTask?";
-        const nameParam = "name=";
-        const taskParam = "text=";
+        const data = JSON.stringify({
+            userName: this.props.userName,
+            task: deletedNote[0].task
+        });
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.response && xhr.response.ok) {
                 console.log(xhr.response);
             }
         };
-        xhr.open('DELETE', `${URL}${nameParam}${this.props.userName}&${taskParam}${deletedNote[0].task}`, true);
-        xhr.send();
+        xhr.open('DELETE', `${URL}`, true);
+        xhr.send(data);
         this.setState({
             notes: newNotes
         });
