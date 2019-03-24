@@ -1,7 +1,7 @@
 {
   "main.css": "/bestNotes/static/css/main.8214447d.chunk.css",
-  "main.js": "/bestNotes/static/js/main.25751f94.chunk.js",
-  "main.js.map": "/bestNotes/static/js/main.25751f94.chunk.js.map",
+  "main.js": "/bestNotes/static/js/main.c1ba405c.chunk.js",
+  "main.js.map": "/bestNotes/static/js/main.c1ba405c.chunk.js.map",
   "static/js/1.0cd6058f.chunk.js": "/bestNotes/static/js/1.0cd6058f.chunk.js",
   "static/js/1.0cd6058f.chunk.js.map": "/bestNotes/static/js/1.0cd6058f.chunk.js.map",
   "runtime~main.js": "/bestNotes/static/js/runtime~main.bd42ae98.js",
@@ -9,6 +9,6 @@
   "static/media/LoginPage.css": "/bestNotes/static/media/IndieFlower.cbd50882.ttf",
   "static/css/main.8214447d.chunk.css.map": "/bestNotes/static/css/main.8214447d.chunk.css.map",
   "index.html": "/bestNotes/index.html",
-  "precache-manifest.83a0da231f995e1040e76a1d80c35722.js": "/bestNotes/precache-manifest.83a0da231f995e1040e76a1d80c35722.js",
+  "precache-manifest.617259946c9659c55b21cd6a85ce0fc4.js": "/bestNotes/precache-manifest.617259946c9659c55b21cd6a85ce0fc4.js",
   "service-worker.js": "/bestNotes/service-worker.js"
 }
