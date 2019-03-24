@@ -7,7 +7,7 @@ class ThingToDoContainer extends Component {
         if (prevProps.done !== this.props.done && prevProps.task === this.props.task) {
             //updateTask(this.props.userName, this.props.task, this.props.done)
             const xhr = new XMLHttpRequest();
-            const URL = 'http://flaneczki.pl:8888/updateTask';
+            const URL = 'https://flaneczki.pl:8888/updateTask';
             const data = JSON.stringify({
                 username: this.props.userName,
                 text: this.props.task,

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac610651-438e-47a7-ab3f-2f036d6ee549" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,9 +38,9 @@
           <entry key="css" value="60" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="209" />
+          <entry key="js" value="211" />
           <entry key="json" value="5" />
-          <entry key="md" value="4" />
+          <entry key="md" value="5" />
           <entry key="svg" value="1" />
           <entry key="txt" value="1" />
         </counts>
@@ -50,8 +51,8 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="209" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="JavaScript" value="211" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
@@ -59,9 +60,9 @@
         <counts>
           <entry key="css" value="3465" />
           <entry key="html" value="71" />
-          <entry key="js" value="11334" />
+          <entry key="js" value="11339" />
           <entry key="json" value="129" />
-          <entry key="md" value="1083" />
+          <entry key="md" value="1187" />
           <entry key="txt" value="177" />
         </counts>
       </usages-collector>
@@ -70,8 +71,8 @@
           <entry key="CSS" value="3465" />
           <entry key="HTML" value="71" />
           <entry key="JSON" value="129" />
-          <entry key="JavaScript" value="11334" />
-          <entry key="PLAIN_TEXT" value="1260" />
+          <entry key="JavaScript" value="11339" />
+          <entry key="PLAIN_TEXT" value="1364" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -83,11 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logicalComponents/FrameContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="116" column="70" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
+            <state relative-caret-position="408">
+              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -95,17 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="136">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -159,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/visualComponents/ThingToDo.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/serviceWorker.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/visualComponents/Frame.js" />
         <option value="$PROJECT_DIR$/src/themes/AddButton.css" />
@@ -167,9 +158,10 @@
         <option value="$PROJECT_DIR$/src/themes/Frame.css" />
         <option value="$PROJECT_DIR$/src/logicalComponents/AppContainer.js" />
         <option value="$PROJECT_DIR$/src/visualComponents/App.js" />
-        <option value="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" />
-        <option value="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" />
         <option value="$PROJECT_DIR$/public/manifest.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" />
+        <option value="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" />
       </list>
     </option>
   </component>
@@ -212,12 +204,13 @@
             <path>
               <item name="best_notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="best_notes" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="best_notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="best_notes" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="logicalComponents" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,7 +286,7 @@
       <workItem from="1551618223975" duration="18000" />
       <workItem from="1553429584958" duration="1901000" />
       <workItem from="1553451900139" duration="1708000" />
-      <workItem from="1553453644805" duration="973000" />
+      <workItem from="1553453644805" duration="1174000" />
     </task>
     <task id="LOCAL-00001" summary="starting project , first 3 hours of work">
       <created>1542757514015</created>
@@ -425,7 +418,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68634000" />
+    <option name="totallyTimeSpent" value="68835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -614,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -698,24 +684,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/logicalComponents/FrameContainer.js">
+    <entry file="file://$PROJECT_DIR$/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="116" column="70" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
+        <state relative-caret-position="187">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state relative-caret-position="136">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/manifest.json">
+    <entry file="file://$PROJECT_DIR$/src/logicalComponents/FrameContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="408">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -29,7 +29,7 @@ class FrameContainer extends Component {
     }
 
     componentWillMount() {
-        const URL = "http://flaneczki.pl:8888/getTasks/";
+        const URL = "https://flaneczki.pl:8888/getTasks/";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
@@ -71,7 +71,7 @@ class FrameContainer extends Component {
         let input = document.getElementById("task");
         if (input.value) {
             const xhr = new XMLHttpRequest();
-            const URL = 'http://flaneczki.pl:8888/newTask';
+            const URL = 'https://flaneczki.pl:8888/newTask';
             const data = JSON.stringify({
                 userName: this.props.userName,
                 text: input.value
@@ -106,7 +106,7 @@ class FrameContainer extends Component {
         let newNotes = this.state.notes.slice(0);
         let deletedNote = newNotes.splice(index, 1);
 
-        const URL = "http://flaneczki.pl:8888/deleteTask";
+        const URL = "https://flaneczki.pl:8888/deleteTask";
         const data = JSON.stringify({
             userName: this.props.userName,
             text: deletedNote[0].task
