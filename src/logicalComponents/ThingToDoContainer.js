@@ -7,11 +7,12 @@ class ThingToDoContainer extends Component {
         if (prevProps.done !== this.props.done && prevProps.task === this.props.task) {
             //updateTask(this.props.userName, this.props.task, this.props.done)
             const xhr = new XMLHttpRequest();
-            const URL = 'https://flaneczki.pl:8888/updateTask';
+            const URL = 'http://localhost:3000/api/updateTask';
             const data = JSON.stringify({
                 username: this.props.userName,
                 text: this.props.task,
-                done: this.props.done
+                done: this.props.done,
+                _id: this.props._id,
             });
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
@@ -20,7 +21,7 @@ class ThingToDoContainer extends Component {
                         console.log("zmieniono pomyślnie");
                 }
             };
-            xhr.open('PUT', URL);
+            xhr.open('PATCH', URL);
             xhr.setRequestHeader('Content-type',
                 'application/json');
             xhr.send(data);

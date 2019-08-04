@@ -17,6 +17,7 @@ const Frame = (props) => {
                 index={index}
                 done={note.done}
                 task={note.task}
+                _id={note._id}
                 handleChange={props.handleCheckboxChange}
                 deleteNote={props.deleteNote}/>);
     });

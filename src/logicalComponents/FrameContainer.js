@@ -29,7 +29,7 @@ class FrameContainer extends Component {
     }
 
     componentWillMount() {
-        const URL = "https://flaneczki.pl:8888/getTasks/";
+        const URL = "http://localhost:3000/api/getTasks/";
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
@@ -40,7 +40,8 @@ class FrameContainer extends Component {
                         console.log(xhr.response[i]);
                         let newNote = {
                             done: xhr.response[i].done,
-                            task: xhr.response[i].text
+                            task: xhr.response[i].text,
+                            _id: xhr.response[i]._id,
                         };
                         newNotes.push(newNote);
 
@@ -71,9 +72,9 @@ class FrameContainer extends Component {
         let input = document.getElementById("task");
         if (input.value) {
             const xhr = new XMLHttpRequest();
-            const URL = 'https://flaneczki.pl:8888/newTask';
+            const URL = 'http://localhost:3000/api/newTask';
             const data = JSON.stringify({
-                userName: this.props.userName,
+                username: this.props.userName,
                 text: input.value
             });
             xhr.responseType = 'json';
@@ -106,10 +107,11 @@ class FrameContainer extends Component {
         let newNotes = this.state.notes.slice(0);
         let deletedNote = newNotes.splice(index, 1);
 
-        const URL = "https://flaneczki.pl:8888/deleteTask";
+        const URL = "http://localhost:3000/api/deleteTask";
         const data = JSON.stringify({
             userName: this.props.userName,
-            text: deletedNote[0].task
+            text: deletedNote[0].task,
+            _id: deletedNote[0]._id,
         });
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
@@ -118,7 +120,9 @@ class FrameContainer extends Component {
                 console.log(xhr.response);
             }
         };
-        xhr.open('DELETE', `${URL}`, true);
+        xhr.open('DELETE', `${URL}`);
+        xhr.setRequestHeader('Content-type',
+            'application/json');
         xhr.send(data);
         this.setState({
             notes: newNotes
