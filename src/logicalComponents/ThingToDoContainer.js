@@ -7,7 +7,7 @@ class ThingToDoContainer extends Component {
         if (prevProps.done !== this.props.done && prevProps.task === this.props.task) {
             //updateTask(this.props.userName, this.props.task, this.props.done)
             const xhr = new XMLHttpRequest();
-            const URL = 'http://localhost:3000/api/updateTask';
+            const URL = 'https://vast-wave-96184.herokuapp.com/api/updateTask';
             const data = JSON.stringify({
                 username: this.props.userName,
                 text: this.props.task,
