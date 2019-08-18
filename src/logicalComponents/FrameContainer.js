@@ -81,24 +81,24 @@ class FrameContainer extends Component {
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.response) {
                     console.log("dodano pomyślnie");
+                    this.createSound.play();
+                    let newNote = {
+                        done: false,
+                        task: xhr.response["created task"].text,
+                        _id: xhr.response["created task"]._id,
+                    };
+                    input.value = "";
+                    let newNotes = this.state.notes.slice(0);
+                    newNotes.push(newNote);
+                    this.setState({
+                        notes: newNotes
+                    });
                 }
             };
             xhr.open('POST', URL);
             xhr.setRequestHeader('Content-type',
                 'application/json');
             xhr.send(data);
-
-            this.createSound.play();
-            let newNote = {
-                done: false,
-                task: input.value
-            };
-            input.value = "";
-            let newNotes = this.state.notes.slice(0);
-            newNotes.push(newNote);
-            this.setState({
-                notes: newNotes
-            });
         }
     };
 

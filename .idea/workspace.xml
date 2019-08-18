@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac610651-438e-47a7-ab3f-2f036d6ee549" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalComponents/FrameContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,7 +41,7 @@
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
           <entry key="js" value="225" />
-          <entry key="json" value="6" />
+          <entry key="json" value="8" />
           <entry key="md" value="6" />
           <entry key="svg" value="1" />
           <entry key="txt" value="1" />
@@ -54,7 +52,7 @@
           <entry key="CSS" value="60" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
-          <entry key="JSON" value="6" />
+          <entry key="JSON" value="8" />
           <entry key="JavaScript" value="225" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SVG" value="1" />
@@ -64,7 +62,7 @@
         <counts>
           <entry key="css" value="3465" />
           <entry key="html" value="71" />
-          <entry key="js" value="11522" />
+          <entry key="js" value="11579" />
           <entry key="json" value="129" />
           <entry key="md" value="1187" />
           <entry key="txt" value="177" />
@@ -75,7 +73,7 @@
           <entry key="CSS" value="3465" />
           <entry key="HTML" value="71" />
           <entry key="JSON" value="129" />
-          <entry key="JavaScript" value="11522" />
+          <entry key="JavaScript" value="11579" />
           <entry key="PLAIN_TEXT" value="1364" />
         </counts>
       </usages-collector>
@@ -91,8 +89,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/logicalComponents/FrameContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="70" column="21" lean-forward="true" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+            <state relative-caret-position="237">
+              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -111,9 +118,10 @@
     <findStrings>
       <find>const URL</find>
       <find>URL</find>
-      <find>id</find>
       <find>addNo</find>
       <find>http://localhost:3000</find>
+      <find>i</find>
+      <find>id</find>
     </findStrings>
     <replaceStrings>
       <replace>https://vast-wave-96184.herokuapp.com</replace>
@@ -295,7 +303,7 @@
       <workItem from="1565111684655" duration="187000" />
       <workItem from="1565112369676" duration="31000" />
       <workItem from="1565112425950" duration="7000" />
-      <workItem from="1566146159552" duration="45000" />
+      <workItem from="1566146159552" duration="460000" />
     </task>
     <task id="LOCAL-00001" summary="starting project , first 3 hours of work">
       <created>1542757514015</created>
@@ -427,7 +435,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78697000" />
+    <option name="totallyTimeSpent" value="79112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -501,11 +509,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed bugs with audio files" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3111" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/logo.svg" />
     <entry file="file://$PROJECT_DIR$/src/App.test.js" />
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
@@ -697,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/logicalComponents/ThingToDoContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -725,10 +721,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/logicalComponents/FrameContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="70" column="21" lean-forward="true" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        <state relative-caret-position="237">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
         </state>
       </provider>
     </entry>
